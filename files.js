@@ -260,7 +260,9 @@ var doAnimations = function() {
 
 function isTouchDevice() {
   var prefixes = ["", "-webkit-", "-moz-", "-o-", "-ms-", ""];
-  var mq = query => window.matchMedia(query).matches;
+  var mq = function(query) {
+    window.matchMedia(query).matches;
+  } 
 
   if (
     "ontouchstart" in window ||
